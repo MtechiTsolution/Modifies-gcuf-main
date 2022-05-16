@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable-v24/btn_gradient_style.xml" value="0.13645833333333332" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable-v24/ic_arrow_forward_black_24dp.xml" value="0.13645833333333332" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13645833333333332" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/back.xml" value="0.157" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/back_home.xml" value="0.1325" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/back_next_button_splash.xml" value="0.2255859375" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/bg_dashed_gray.xml" value="0.1325" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/btn_gradient_style.xml" value="0.13645833333333332" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/d_bottom_gray_line.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/d_top_bottom_border_line.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/editfield_releative_border.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/fee_back.xml" value="0.1325" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/fee_detail_back.xml" value="0.138" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/ic_arrow_forward_black_24dp.xml" value="0.13645833333333332" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/ic_back.xml" value="0.132" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/ic_baseline_arrow_circle_right_24.xml" value="0.164" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.1325" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.16944444444444445" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/ic_technical_support.xml" value="0.2046875" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/indicator_default.xml" value="0.13645833333333332" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/indicator_selector.xml" value="0.18489583333333334" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/right_arrow.xml" value="0.1325" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/send_message.xml" value="0.13385416666666666" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/drawable/timetableback.xml" value="0.1755" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/font/font.xml" value="0.19583333333333333" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_attendance.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_chat_groups.xml" value="0.20199275362318841" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_chats_acitivity.xml" value="0.18" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_courses_enrolled.xml" value="0.18" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_f_assigned_courses.xml" value="0.19655797101449277" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_fee_details.xml" value="0.19655797101449277" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_intro.xml" value="0.1203125" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_mark_attendance_view.xml" value="0.1983695652173913" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_qec_ranking.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_result.xml" value="0.19655797101449277" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_settings.xml" value="0.12135416666666667" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_t_v_a_details.xml" value="0.15729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_teacher_view_attendance.xml" value="0.12135416666666667" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/activity_time_table.xml" value="0.18" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/bottom_navigation_drawer.xml" value="0.18854166666666666" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/dialog_bottom_fee_details_layout.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/fragment_time_table_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/item_attendance_layout.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/item_fee_layout.xml" value="0.19655797101449277" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/item_layout_enrolled_courses.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/item_layout_timetable.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/layout_screen.xml" value="0.15729166666666666" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/second_user.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/third_user.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/layout/user_chat.xml" value="0.18" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/menu/bottom_menu.xml" value="0.18854166666666666" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.164" />
+        <entry key="..\:/AndroidStudioProjects/AttenderGCUF/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.164" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/drawable/customback.xml" value="0.1395" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/drawable/ic_sad.xml" value="0.1395" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/drawable/send_message.xml" value="0.1395" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/activity_chat_groups.xml" value="0.16510416666666666" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/activity_chats_acitivity.xml" value="0.16510416666666666" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/activity_home.xml" value="0.10552536231884058" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/activity_result.xml" value="0.10552536231884058" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/item_attendance_layout.xml" value="0.16510416666666666" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/item_chat_layout.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/sendbackcustom.xml" value="0.16510416666666666" />
+        <entry key="..\:/AndroidStudioProjects2nd/Modifies gcuf/app/src/main/res/layout/third_user.xml" value="0.20416666666666666" />
+        <entry key="..\:/Company_Your_servo/AttenderGCUF/app/src/main/res/layout/activity_chats_acitivity.xml" value="0.12360688956433637" />
+        <entry key="..\:/Company_Your_servo/AttenderGCUF/app/src/main/res/layout/third_user.xml" value="0.22826086956521738" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_attendance.xml" value="0.25" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_chats_acitivity.xml" value="0.16168478260869565" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_courses_enrolled.xml" value="0.16168478260869565" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_f_assigned_courses.xml" value="0.16168478260869565" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_fee_details.xml" value="0.1" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_main.xml" value="0.16168478260869565" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_mark_attendance_view.xml" value="0.67" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_result.xml" value="0.34363411619283063" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_select_mark_attendance_type.xml" value="0.16168478260869565" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_settings.xml" value="0.33" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/activity_time_table.xml" value="0.33" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/bottom_navigation_drawer.xml" value="0.16168478260869565" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/dialog_bottom_fee_details_layout.xml" value="0.33" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/dialog_bottom_result_details_layout.xml" value="0.1" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/item_attendance_layout.xml" value="0.1" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/item_fee_layout.xml" value="0.22" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/item_layout_card_attendance.xml" value="0.25" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/item_layout_enrolled_courses.xml" value="0.5" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/item_layout_mark_attendance.xml" value="0.67" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/item_result_layout.xml" value="0.46179401993355484" />
+        <entry key="..\:/FYP/130march-2022/Attendence-GCUF-main/app/src/main/res/layout/layout_screen.xml" value="0.16168478260869565" />
+        <entry key="..\:/Github/Attendence-GCUF/app/src/main/res/layout/activity_chat_groups.xml" value="0.18885869565217392" />
+        <entry key="..\:/Github/Attendence-GCUF/app/src/main/res/layout/activity_chats_acitivity.xml" value="0.18" />
+        <entry key="..\:/Github/Attendence-GCUF/app/src/main/res/layout/activity_uploadimage.xml" value="0.19746376811594202" />
+        <entry key="..\:/Github/Attendence-GCUF/app/src/main/res/layout/third_user.xml" value="0.21" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_attendance.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_courses_enrolled.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_f_assigned_courses.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_fee_details.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_intro.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_main.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_result.xml" value="0.18" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_select_mark_attendance_type.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_t_v_a_details.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/activity_time_table.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/bottom_navigation_drawer.xml" value="0.33" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/item_attendance_layout.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/item_fee_layout.xml" value="0.33" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/item_layout_assigned_course.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/item_layout_enrolled_courses.xml" value="0.43037974683544306" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/item_layout_timetable.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/item_result_layout.xml" value="0.25" />
+        <entry key="..\:/Users/DELL/Documents/GitHub/Modifies-gcuf-main/app/src/main/res/layout/layout_screen.xml" value="0.1693840579710145" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

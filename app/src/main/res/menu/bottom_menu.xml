@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/home"
+        android:title="Home"
+        android:visible="true" />
+    <item android:id="@+id/action_attendance"
+        android:title="Attendance"
+        android:icon="@drawable/attendace"
+        android:visible="true"
+        />
+    <item android:id="@+id/action_result"
+        android:title="Results"
+        android:icon="@drawable/result"
+        android:visible="true"
+        />
+    <item android:id="@+id/action_profile"
+        android:title="Settings"
+        android:icon="@drawable/settign"
+        android:visible="true"
+        />
+    <item android:id="@+id/message"
+        android:title="Message"
+        android:icon="@drawable/chat"
+        android:visible="true"
+        />
+</menu>

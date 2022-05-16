@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@color/colorWhite"
+    tools:context=".HomeActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp">
+
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/cambria"
+                        android:letterSpacing="0.1"
+                        android:text="Welcome to GCUF Student Portal"
+                        android:textColor="#124C56"
+                        android:textSize="18dp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/back_home"
+
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/time_table_activity_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/mo"
+                            android:clickable="true"
+
+                            android:gravity="center|left"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/rectangle3"
+                            android:drawablePadding="12dp"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:paddingStart="32dp"
+                            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:paddingEnd="32dp"
+                            android:text="TimeTable"
+                            android:fontFamily="@font/cambria"
+                            android:textAllCaps="false"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/back_home"
+
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/enrolled_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bggg"
+                            android:clickable="true"
+                            android:gravity="center|left"
+                            android:fontFamily="@font/cambria"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/online_courses"
+                            android:drawablePadding="12dp"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:paddingStart="32dp"
+                            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:paddingEnd="32dp"
+                            android:text="Enrolled Courses"
+                            android:textAllCaps="false"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/back_home"
+
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/fee_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/red"
+                            android:clickable="true"
+                            android:gravity="center|left"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/rectangle"
+                            android:drawablePadding="12dp"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:paddingStart="32dp"
+                            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:paddingEnd="32dp"
+                            android:text="Fee Section"
+                            android:textAllCaps="false"
+                            android:fontFamily="@font/cambria"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/back_home"
+
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/qec_ranking_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/pur"
+                            android:clickable="true"
+                            android:gravity="center|left"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/cambria"
+                            android:drawableLeft="@drawable/rectangle1"
+                            android:drawablePadding="12dp"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:paddingStart="32dp"
+                            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:paddingEnd="32dp"
+                            android:text="QEC Ranking"
+                            android:textAllCaps="false"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/back_home"
+
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/Group_chat"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/gre"
+                            android:clickable="true"
+                            android:gravity="center|left"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/bubble_chat"
+                            android:drawablePadding="12dp"
+                            android:fontFamily="@font/cambria"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:paddingStart="32dp"
+                            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+                            android:paddingEnd="32dp"
+                            android:text="Group Chat"
+                            android:textAllCaps="false"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+
+
+
+        </LinearLayout>
+
+
+        <include
+            android:id="@+id/bottomNavigationLayout"
+            layout="@layout/bottom_navigation_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </FrameLayout>
+
+
+
+
+
+
+
+</LinearLayout>
