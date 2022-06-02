@@ -20,10 +20,12 @@ import com.loopj.android.http.TextHttpResponseHandler;
 import com.providentitgroup.attendergcuf.Utility.DataLocal;
 import com.providentitgroup.attendergcuf.Utility.DataRequester;
 import com.providentitgroup.attendergcuf.models.FeeItem;
+import com.providentitgroup.attendergcuf.models.TimeTableItem;
 
 import static android.view.View.GONE;
 
 import static com.providentitgroup.attendergcuf.LoginActivity.CNIC;
+import static com.providentitgroup.attendergcuf.LoginActivity.IS_FACULTY;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -31,6 +33,7 @@ import org.jsoup.select.Elements;
 
 import java.nio.channels.InterruptedByTimeoutException;
 import java.security.acl.Group;
+import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 import es.dmoral.toasty.Toasty;
@@ -40,27 +43,28 @@ public class HomeActivity extends AppCompatActivity {
     TextView timeTableBtn;
     TextView feeSectionBtn;
     TextView enrolledBtn;
-    TextView qecRankingBtn,Chat;
+    TextView qecRankingBtn, Chat;
     BottomNavigationView bottomNavigationView;
     Context context;
-    
+    private ArrayList[] timeTableItems;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        context =this;
+        context = this;
         timeTableBtn = findViewById(R.id.time_table_activity_btn);
         feeSectionBtn = findViewById(R.id.fee_btn);
         enrolledBtn = findViewById(R.id.enrolled_btn);
         qecRankingBtn = findViewById(R.id.qec_ranking_btn);
-        Chat =findViewById(R.id.Group_chat);
+        Chat = findViewById(R.id.Group_chat);
         bottomNavigationView = findViewById(R.id.bottomNavigationLayout);
         setFacultySettings();
         Chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HomeActivity.this,ChatGroups.class);
+                Intent intent = new Intent(HomeActivity.this, ChatGroups.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setFacultySettings() {
-        if(DataLocal.getBoolean(this, LoginActivity.IS_FACULTY)) {
+        if (DataLocal.getBoolean(this, IS_FACULTY)) {
             feeSectionBtn.setVisibility(View.GONE);
 //            enrolledBtn.setVisibility(View.GONE);
             qecRankingBtn.setVisibility(View.GONE);
@@ -79,7 +83,7 @@ public class HomeActivity extends AppCompatActivity {
             setQecRankingBtn();
             setBottomNavigationListener();
 
-        }else{
+        } else {
             setTimeTableBtn();
             setFeeBtn();
             setEnrolledBtn();
@@ -97,10 +101,10 @@ public class HomeActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
 
                     case R.id.action_attendance:
-                        if(!DataLocal.getBoolean(getApplicationContext(), LoginActivity.IS_FACULTY)) {
+                        if (!DataLocal.getBoolean(getApplicationContext(), IS_FACULTY)) {
                             startActivity(new Intent(context, AttendanceActivity.class));
                             finishAffinity();
-                        }else{
+                        } else {
                             startActivity(new Intent(context, TeacherViewAttendanceActivity.class));
                             finishAffinity();
                         }
@@ -109,20 +113,20 @@ public class HomeActivity extends AppCompatActivity {
 
                     case R.id.message:
 
-                            startActivity(new Intent(context, ChatGroups.class));
-                            finishAffinity();
-
+                        startActivity(new Intent(context, ChatGroups.class));
+                        finishAffinity();
 
 
                         break;
 
                     case R.id.action_result:
-                        if(!DataLocal.getBoolean(getApplicationContext(), LoginActivity.IS_FACULTY)) {
+                        if (!DataLocal.getBoolean(getApplicationContext(), IS_FACULTY)) {
                             startActivity(new Intent(context, ResultActivity.class));
                             finishAffinity();
-                        }else{
+                        } else {
                             startActivity(new Intent(context, MarkAttendanceViewActivity.class));
-                            finishAffinity();}
+                            finishAffinity();
+                        }
 
                         break;
                     case R.id.action_profile:
@@ -136,15 +140,16 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
     private void setEnrolledBtn() {
-        if(!DataLocal.getBoolean(this,LoginActivity.IS_FACULTY)) {
+        if (!DataLocal.getBoolean(this, IS_FACULTY)) {
             enrolledBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(HomeActivity.this, CoursesEnrolledActivity.class));
                 }
             });
-        }else{
+        } else {
             enrolledBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -159,7 +164,7 @@ public class HomeActivity extends AppCompatActivity {
         feeSectionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this,FeeDetailsActivity.class));
+                startActivity(new Intent(HomeActivity.this, FeeDetailsActivity.class));
             }
         });
     }
@@ -168,23 +173,24 @@ public class HomeActivity extends AppCompatActivity {
         timeTableBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this,TimeTableActivity.class));
+                startActivity(new Intent(HomeActivity.this, TimeTableActivity.class));
             }
         });
     }
+
     private void setQecRankingBtn() {
-        if(DataLocal.getBoolean(this, LoginActivity.IS_FACULTY)) {
+        if (DataLocal.getBoolean(this, IS_FACULTY)) {
             qecRankingBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(HomeActivity.this,TeacherViewAttendanceActivity.class));
+                    startActivity(new Intent(HomeActivity.this, TeacherViewAttendanceActivity.class));
                 }
             });
-        }else{
+        } else {
             qecRankingBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(HomeActivity.this,QecRankingActivity.class));
+                    startActivity(new Intent(HomeActivity.this, QecRankingActivity.class));
                 }
             });
         }
@@ -192,19 +198,24 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void loadFeeData() {
+        boolean check = DataLocal.getBoolean(context, IS_FACULTY);
+        if (check) {
+            loadTimeTableData();
+            return;
+        }
         DataRequester.get(context, DataRequester.BASE_STUDENT_MODULE_URL + "feeDetail.php", null,
                 new TextHttpResponseHandler() {
                     @Override
                     public void onStart() {
-                       // progressBar.setVisibility(View.VISIBLE);
+                        // progressBar.setVisibility(View.VISIBLE);
                         //recyclerView.setVisibility(View.GONE);
                         super.onStart();
                     }
 
                     @Override
                     public void onFinish() {
-                       // progressBar.setVisibility(View.GONE);
-                       // recyclerView.setVisibility(View.VISIBLE);
+                        // progressBar.setVisibility(View.GONE);
+                        // recyclerView.setVisibility(View.VISIBLE);
                         super.onFinish();
                     }
 
@@ -215,31 +226,106 @@ public class HomeActivity extends AppCompatActivity {
 
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                        if(statusCode==200){
+                        if (statusCode == 200) {
                             Document doc = Jsoup.parse(responseString);
-                            Log.d("check2",responseString);
+                            Log.d("check2", responseString);
                             Elements rows = doc.select("table table tr");
 
-                                try {
-                                    FeeItem feeItem=new FeeItem(rows.get(1).children());
+                            try {
+                                FeeItem feeItem = new FeeItem(rows.get(1).children());
 
-                                    if(DataLocal.isExists(context,CNIC)){
-                                    String name=feeItem.getStudentName();
-                                    String rollnumber=feeItem.getRollNum();
+                                if (DataLocal.isExists(context, CNIC)) {
+                                    String name = feeItem.getStudentName();
+                                    String rollnumber = feeItem.getRollNum();
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                                     DatabaseReference myRef = database.getReference("Users");
-                                     myRef.child(DataLocal.getString(context,CNIC)).child("name").setValue(name);
-                                     myRef.child(DataLocal.getString(context,CNIC)).child("rollnumber").setValue(rollnumber);
-                                       // Toasty.error(context,"User name"+ name+rollnumber,Toasty.LENGTH_LONG).show();
+                                    myRef.child(DataLocal.getString(context, CNIC)).child("name").setValue(name);
+                                    myRef.child(DataLocal.getString(context, CNIC)).child("rollnumber").setValue(rollnumber);
+                                    // Toasty.error(context,"User name"+ name+rollnumber,Toasty.LENGTH_LONG).show();
 
-                                    }
-                                } catch (Exception e) {
-                                    Toasty.error(context,"User name error"+ e,Toasty.LENGTH_LONG).show();
-                                    e.printStackTrace();
                                 }
+                            } catch (Exception e) {
+                                Toasty.error(context, "User name error" + e, Toasty.LENGTH_LONG).show();
+                                e.printStackTrace();
+                            }
 
                         }
                     }
                 });
+    }
+
+
+    private void loadTimeTableData() {
+        timeTableItems = new ArrayList[7];
+        String URL;
+        if (!DataLocal.getBoolean(this, LoginActivity.IS_FACULTY)) {
+            URL = DataRequester.BASE_STUDENT_MODULE_URL + "timeTable.php";
+        } else {
+            URL = DataRequester.BASE_FACULTY_MODULE_URL + "timeTable.php";
+        }
+        DataRequester.get(context, URL, null, new TextHttpResponseHandler() {
+            @Override
+            public void onStart() {
+
+                super.onStart();
+            }
+
+            @Override
+            public void onFinish() {
+
+                super.onFinish();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+
+                Log.d("TAG", responseString);
+            }
+
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                if (statusCode == 200) {
+                    Document doc = Jsoup.parse(responseString);
+                    Elements rows = doc.select(".table table tbody tr td");
+
+
+                    Log.d("TAG1", rows.toString());
+                    for (int i = 0; i < timeTableItems.length; i++) {
+                        timeTableItems[i] = new ArrayList<>();
+                    }
+                    for (int i = 0, j = 0; i < rows.size(); i++) {
+                        if (rows.get(i).text().length() > 10) {
+                            try {
+                                timeTableItems[j - 1].add(new TimeTableItem(rows.get(i)));
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        j++;
+                        if (j == 8) {
+                            j = 0;
+                        }
+                    }
+
+                    ArrayList<Object> arrayList=timeTableItems[1];
+
+                    final TimeTableItem timeTableItem = (TimeTableItem) arrayList.get(0);
+                    if (DataLocal.isExists(context, CNIC)) {
+                        String name = timeTableItem.getInstructorName();
+                        String rollnumber = "Professor";
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("Users");
+                        myRef.child(DataLocal.getString(context, CNIC)).child("name").setValue(name);
+                        myRef.child(DataLocal.getString(context, CNIC)).child("rollnumber").setValue(rollnumber);
+                        // Toasty.error(context,"User name"+ name+rollnumber,Toasty.LENGTH_LONG).show();
+
+                    }
+
+
+
+                }
+            }
+        });
     }
 }

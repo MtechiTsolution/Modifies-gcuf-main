@@ -69,22 +69,22 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
 
         holder.attendancePercentage.setImageDrawable(drawable);
         holder.creditHours.setText(getLast6Characters(attendanceItems.get(position).getCourseName()));
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(DataLocal.isExists(context,CNIC)){
-                    Intent intent=new Intent(context, ChatsAcitivity.class);
-                    intent.putExtra("userid",DataLocal.getString(context,CNIC));
-                    intent.putExtra("groupid",getStringWithoutLastCharacters(attendanceItems.get(position).getCourseName(),6)+"@"+attendanceItems.get(position).getCourseId());
-                    intent.putExtra("groupname",getStringWithoutLastCharacters(attendanceItems.get(position).getCourseName(),6));
-                    context.startActivity(intent);
-                }
-                else{
-                    Toast.makeText(context,"you are not properly login...",Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+////            public void onClick(View v) {
+////                if(DataLocal.isExists(context,CNIC)){
+////                    Intent intent=new Intent(context, ChatsAcitivity.class);
+////                    intent.putExtra("userid",DataLocal.getString(context,CNIC));
+////                    intent.putExtra("groupid",getStringWithoutLastCharacters(attendanceItems.get(position).getCourseName(),6)+"@"+attendanceItems.get(position).getCourseId());
+////                    intent.putExtra("groupname",getStringWithoutLastCharacters(attendanceItems.get(position).getCourseName(),6));
+////                    context.startActivity(intent);
+////                }
+////                else{
+////                    Toast.makeText(context,"you are not properly login...",Toast.LENGTH_SHORT).show();
+////                }
+////
+////            }
+//        });
     }
 
     @Override

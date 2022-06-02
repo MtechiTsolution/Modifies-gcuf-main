@@ -57,7 +57,7 @@ public class TeacherViewAttendanceActivity extends AppCompatActivity {
         context = this;
 
         attendanceItems = new ArrayList<>(0);
-        attendanceAdapter = new TeacherViewAttendanceAdapter(attendanceItems, context);
+        attendanceAdapter = new TeacherViewAttendanceAdapter(attendanceItems, context,0);
 
         progressBar = findViewById(R.id.progressBar);
         bottomNavigationView = findViewById(R.id.bottomNavigationLayout);

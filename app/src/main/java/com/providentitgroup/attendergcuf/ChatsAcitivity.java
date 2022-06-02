@@ -81,6 +81,8 @@ public class ChatsAcitivity extends AppCompatActivity {
             groupid=intent.getStringExtra("groupid");
              grpname=intent.getStringExtra("groupname");
             groupname.setText(grpname);
+            groupid= groupid.replace(" ","");
+            //Toast.makeText(ChatsAcitivity.this, ""+groupid.replace(" ",""), Toast.LENGTH_SHORT).show();
 
         }        FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Chats");

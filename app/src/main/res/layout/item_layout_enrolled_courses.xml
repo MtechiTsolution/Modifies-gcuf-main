@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:padding="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginRight="20dp"
         app:cardElevation="10dp"
 
         android:elevation="10dp">
@@ -64,7 +64,7 @@
 
             <ImageView
                 android:id="@+id/course_code"
-                android:layout_width="327dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_gravity="right"
                 android:fontFamily="@font/googlesans_bold"
