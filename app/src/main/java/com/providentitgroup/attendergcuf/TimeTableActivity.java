@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -48,7 +49,7 @@ public class TimeTableActivity extends AppCompatActivity {
     private Context context;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-
+    ImageView imageView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,7 @@ public class TimeTableActivity extends AppCompatActivity {
         setContentView(R.layout.activity_time_table);
 
         context = this;
-
+        imageView1= findViewById(R.id.titme_table);
         progressBar = findViewById(R.id.progressBar);
         timeTableItems = new ArrayList[7];
 
@@ -82,6 +83,7 @@ public class TimeTableActivity extends AppCompatActivity {
     private void loadTimeTableData() {
         String URL;
         if (!DataLocal.getBoolean(this, LoginActivity.IS_FACULTY)) {
+           // imageView1.setVisibility(View.GONE);
             URL = DataRequester.BASE_STUDENT_MODULE_URL + "timeTable.php";
         } else {
             URL = DataRequester.BASE_FACULTY_MODULE_URL + "timeTable.php";

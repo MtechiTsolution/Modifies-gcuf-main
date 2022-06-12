@@ -105,6 +105,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="90dp"
+                        android:id="@+id/fee_layout"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/back_home"
 
@@ -133,6 +134,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="90dp"
+                        android:id="@+id/qec_lyout"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/back_home"
 

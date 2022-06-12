@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -53,6 +54,7 @@ public class ChatsAcitivity extends AppCompatActivity {
     ImageButton sendImage;
     TextView groupname;
     EditText messageedit;
+    MediaPlayer mp;
     ImageView send;
     RecyclerView messagelist;
     List<String> messagelistitem;
@@ -73,8 +75,10 @@ public class ChatsAcitivity extends AppCompatActivity {
         messagelist=findViewById(R.id.chatlist);
         sendImage=findViewById(R.id.uploadimagebtn);
 
+        mp = MediaPlayer.create(this, R.raw.send);
+
         send=findViewById(R.id.sendbtn);
-        context =this;
+        context =ChatsAcitivity.this;
         Intent intent=getIntent();
         if(intent!=null){
             userid=intent.getStringExtra("userid");
@@ -156,6 +160,8 @@ public class ChatsAcitivity extends AppCompatActivity {
                 intent1.setAction(intent1.ACTION_GET_CONTENT);
                 startActivityForResult(intent1,PICK_IMAGE);
 
+                mp.start();
+
             }
         });
 
@@ -172,7 +178,9 @@ public class ChatsAcitivity extends AppCompatActivity {
                   myRef.child(groupid).child(messageid).child("rollnumber").setValue(rollnumber);
                   myRef.child(groupid).child(messageid).child("type").setValue("text");
                   myRef.child(groupid).child(messageid).child("time").setValue(ServerValue.TIMESTAMP);
+                    mp.start();
                   messageedit.setText("");
+
                 }
             }
         });

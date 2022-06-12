@@ -74,7 +74,8 @@ public class TeacherViewAttendanceActivity extends AppCompatActivity {
 
         setBottomNavigationListener();
         setTabLayout();
-        requestAttendanceData(DataRequester.BASE_FACULTY_MODULE_URL + "attendance_viewAll.php");
+        requestAttendanceData(DataRequester.BASE_FACULTY_MODULE_URL
+                + "attendance_viewAll.php");
 
     }
 
@@ -83,7 +84,8 @@ public class TeacherViewAttendanceActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(sessionsLinks.size()>0 && !sessionsLinks.get(tab.getPosition()).equals(""))
-                    requestAttendanceData(DataRequester.BASE_FACULTY_MODULE_URL + sessionsLinks.get(tab.getPosition()));
+                    requestAttendanceData(DataRequester.BASE_FACULTY_MODULE_URL +
+                            sessionsLinks.get(tab.getPosition()));
 
             }
 

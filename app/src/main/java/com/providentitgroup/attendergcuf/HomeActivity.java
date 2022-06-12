@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView feeSectionBtn;
     TextView enrolledBtn;
     TextView qecRankingBtn, Chat;
+    LinearLayout layoutfee,layoutqec;
     BottomNavigationView bottomNavigationView;
     Context context;
     private ArrayList[] timeTableItems;
@@ -56,6 +58,8 @@ public class HomeActivity extends AppCompatActivity {
         context = this;
         timeTableBtn = findViewById(R.id.time_table_activity_btn);
         feeSectionBtn = findViewById(R.id.fee_btn);
+        layoutfee = findViewById(R.id.fee_layout);
+        layoutqec = findViewById(R.id.qec_lyout);
         enrolledBtn = findViewById(R.id.enrolled_btn);
         qecRankingBtn = findViewById(R.id.qec_ranking_btn);
         Chat = findViewById(R.id.Group_chat);
@@ -75,6 +79,8 @@ public class HomeActivity extends AppCompatActivity {
     private void setFacultySettings() {
         if (DataLocal.getBoolean(this, IS_FACULTY)) {
             feeSectionBtn.setVisibility(View.GONE);
+            layoutfee.setVisibility(View.GONE);
+            layoutqec.setVisibility(View.GONE);
 //            enrolledBtn.setVisibility(View.GONE);
             qecRankingBtn.setVisibility(View.GONE);
             enrolledBtn.setText("Assigned Courses");
@@ -161,6 +167,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setFeeBtn() {
+       if (!DataLocal.getBoolean(this, IS_FACULTY))
         feeSectionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

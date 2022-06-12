@@ -66,20 +66,18 @@
                     android:layout_below="@+id/groupname"
                     android:textSize="10dp"
                     android:layout_marginStart="10dp"
-                    android:text="212123132132123"
                     android:id="@+id/last_seen_online"
                     android:textColor="@color/darkgray"
                     android:layout_marginEnd="15dp"/>
 
                 <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/onlineStatus"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@color/red"
-                    android:id="@+id/onlineStatus"
-                    android:scaleType="centerCrop"
-                    app:riv_corner_radius="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="5dp"/>
+                    android:layout_marginEnd="5dp"
+                    android:scaleType="centerCrop"
+                    app:riv_corner_radius="50dp" />
 
 
             </RelativeLayout>
@@ -199,13 +197,15 @@
                         android:id="@+id/msgedittext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:backgroundTint="@android:color/transparent"
                         android:hint="Enter message here"
                         android:paddingStart="10dp"
                         android:paddingTop="12dp"
                         android:paddingBottom="12dp"
                         android:textColor="#000"
-                        android:textColorHint="@color/tab_indicator_gray"
+                        android:textColorHint="#CFD8DC"
+
                         android:textSize="14sp" />
 
 
@@ -218,9 +218,9 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
-                    android:background="@drawable/customback"
                     android:foregroundGravity="center"
-                    android:padding="6dp"
+                    android:layout_weight="5"
+                    android:padding="4dp"
                     android:src="@drawable/send_message" />
 
 

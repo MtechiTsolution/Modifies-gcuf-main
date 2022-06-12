@@ -47,6 +47,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:visibility="gone"
                     android:background="@drawable/round"
                     android:fontFamily="@font/googlesans_bold"
                     android:gravity="center"
@@ -60,6 +61,8 @@
 
                 <ImageView
                     android:layout_width="290dp"
+                      android:id="@+id/titme_table"
+                    android:visibility="gone"
                     android:layout_height="254dp"
                     android:layout_gravity="center|center_horizontal|center_vertical"
                     android:scaleType="fitXY"

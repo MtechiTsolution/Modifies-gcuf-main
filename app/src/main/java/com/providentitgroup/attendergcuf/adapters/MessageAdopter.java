@@ -1,11 +1,16 @@
 package com.providentitgroup.attendergcuf.adapters;
 
+import static android.content.ContentValues.TAG;
 import static com.providentitgroup.attendergcuf.LoginActivity.CNIC;
 
+import android.animation.Animator;
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.view.ContextMenu;
+import android.media.MediaPlayer;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +18,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,10 +29,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.providentitgroup.attendergcuf.R;
+import com.providentitgroup.attendergcuf.Showimage;
 import com.providentitgroup.attendergcuf.Utility.DataLocal;
 import com.squareup.picasso.Picasso;
 
-import java.util.Collections;
+import java.io.File;
 import java.util.List;
 
 public class MessageAdopter extends RecyclerView.Adapter<MessageAdopter.MessageViewHolder> {
@@ -54,8 +60,12 @@ public class MessageAdopter extends RecyclerView.Adapter<MessageAdopter.MessageV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
+    public int getItemViewType(int position) {
+        return position;
+    }
 
+    @Override
+    public void onBindViewHolder(@NonNull MessageViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
 
         myRef.child(groupid).child(messagelist.get(position)).addValueEventListener(new ValueEventListener() {
@@ -86,14 +96,34 @@ public class MessageAdopter extends RecyclerView.Adapter<MessageAdopter.MessageV
 
                         holder.name.setText(snapshot.child("name").getValue().toString());
                         holder.rollnumber.setText(snapshot.child("rollnumber").getValue().toString());
+
+
                     }else{
                         holder.imageView.setVisibility(View.VISIBLE);
                         holder.messgae.setVisibility(View.GONE);
-                        Picasso.get().load(snapshot.child("message").getValue().toString()).into(holder.imageView);
-
-
+                        Picasso.get().load(snapshot.child("message").getValue().toString())
+                                .into(holder.imageView);
                         holder.name.setText(snapshot.child("name").getValue().toString());
                         holder.rollnumber.setText(snapshot.child("rollnumber").getValue().toString());
+                        holder.imageView.setOnClickListener(new View.OnClickListener() {
+
+                            @Override
+                            public void onClick(View view) {
+
+                                try{
+                                    Intent intent = new Intent(context, Showimage.class);
+                                     intent.putExtra("Imageshow",snapshot.child("message").getValue().toString());
+                                    ((Activity)context).startActivity(intent);
+                                }catch (Exception e){
+                                    Toast.makeText(context, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                }
+
+
+
+                            }
+                        });
+
                     }
 
 
@@ -117,12 +147,15 @@ public class MessageAdopter extends RecyclerView.Adapter<MessageAdopter.MessageV
 
     class  MessageViewHolder extends RecyclerView.ViewHolder{
 
-
+        private Animator currentAnimator;
+        private int shortAnimationDuration;
        TextView name,rollnumber,messgae;
        ImageView imageView;
        LinearLayout msgcard,c1;
+       String imageurl;
+        boolean isImageFitToScreen;
 //       CardView c1;
-
+        MediaPlayer mp;
         public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.nmus);

@@ -68,7 +68,11 @@ public class uploadimage extends AppCompatActivity {
             public void onClick(View view) {
                  messageid=  myRef.child(groupid).push().getKey();
                 filepath=bitmapToUriConverter(bmp);
-                uploadimage();
+                if(filepath==null)
+                {
+                    Toast.makeText(uploadimage.this, "", Toast.LENGTH_SHORT).show();
+                }
+                else{uploadimage();}
             }
         });
 
@@ -100,6 +104,7 @@ public class uploadimage extends AppCompatActivity {
 
         } catch (Exception e) {
             Log.e("Your Error Message", e.getMessage());
+            Toast.makeText(uploadimage.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return uri;
     }
