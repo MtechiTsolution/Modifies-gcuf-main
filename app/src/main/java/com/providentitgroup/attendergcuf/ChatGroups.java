@@ -1,5 +1,7 @@
 package com.providentitgroup.attendergcuf;
 
+import static com.providentitgroup.attendergcuf.LoginActivity.CNIC;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,7 +19,12 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.loopj.android.http.TextHttpResponseHandler;
+import com.providentitgroup.attendergcuf.Notifications.Token;
 import com.providentitgroup.attendergcuf.Utility.DataLocal;
 import com.providentitgroup.attendergcuf.Utility.DataRequester;
 import com.providentitgroup.attendergcuf.adapters.AttendanceAdapter;
@@ -94,6 +101,7 @@ public class ChatGroups extends AppCompatActivity {
         }
 
 
+        updateToken(Token.mtoken);
 
     }
 
@@ -284,4 +292,11 @@ public class ChatGroups extends AppCompatActivity {
 
     }
 
+
+    private void updateToken(String token){
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token token1 = new Token(token);
+        reference.child(DataLocal.getString(ChatGroups.this,CNIC)).setValue(token1);
+    }
 }

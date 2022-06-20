@@ -31,8 +31,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+import com.providentitgroup.attendergcuf.Notifications.APIService;
+import com.providentitgroup.attendergcuf.Notifications.Client;
+import com.providentitgroup.attendergcuf.Notifications.Data;
+import com.providentitgroup.attendergcuf.Notifications.MyResponse;
+import com.providentitgroup.attendergcuf.Notifications.Sender;
+import com.providentitgroup.attendergcuf.Notifications.Token;
 import com.providentitgroup.attendergcuf.Utility.DataLocal;
 import com.providentitgroup.attendergcuf.adapters.AssignedCourseAdapter;
 import com.providentitgroup.attendergcuf.adapters.AttendanceAdapter;
@@ -46,6 +53,10 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChatsAcitivity extends AppCompatActivity {
 
@@ -64,6 +75,7 @@ public class ChatsAcitivity extends AppCompatActivity {
     Uri uri;
     private  static final int PICK_IMAGE=1;
     private boolean receiever_name;
+    APIService apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +88,7 @@ public class ChatsAcitivity extends AppCompatActivity {
         sendImage=findViewById(R.id.uploadimagebtn);
 
         mp = MediaPlayer.create(this, R.raw.send);
+        apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService.class);
 
         send=findViewById(R.id.sendbtn);
         context =ChatsAcitivity.this;
@@ -181,11 +194,15 @@ public class ChatsAcitivity extends AppCompatActivity {
                     mp.start();
                   messageedit.setText("");
 
+                    sendNotifiaction("33100-4907349-9", name, messageedit.getText().toString());
+
                 }
             }
         });
 
     }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode,
                                     @Nullable Intent data) {
@@ -223,5 +240,55 @@ public class ChatsAcitivity extends AppCompatActivity {
             Toast.makeText(ChatsAcitivity.this, "No File selected", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    private void sendNotifiaction(String receiver, final String username, final String message){
+        DatabaseReference tokens = FirebaseDatabase.getInstance().getReference("Tokens");
+        Query query = tokens.orderByKey().equalTo(receiver);
+        Toast.makeText(ChatsAcitivity.this, "Failed! 1", Toast.LENGTH_SHORT).show();
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Toast.makeText(ChatsAcitivity.this, "Failed! 2", Toast.LENGTH_SHORT).show();
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    Toast.makeText(ChatsAcitivity.this, "Failed! 3", Toast.LENGTH_SHORT).show();
+
+                    Token token = snapshot.getValue(Token.class);
+                    Data data = new Data(DataLocal.getString(ChatsAcitivity.this,CNIC), R.mipmap.ic_launcher, username+": "+message, "New Message",
+                            userid);
+
+                    Sender sender = new Sender(data, token.getToken());
+
+                    apiService.sendNotification(sender)
+                            .enqueue(new Callback<MyResponse>() {
+                                @Override
+                                public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
+                                    Toast.makeText(ChatsAcitivity.this, "Failed! 4", Toast.LENGTH_SHORT).show();
+
+                                    if (response.code() == 200){
+                                        if (response.body().success != 1){
+                                            Toast.makeText(ChatsAcitivity.this, "Failed!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<MyResponse> call, Throwable t) {
+
+                                    Toast.makeText(ChatsAcitivity.this, "Failed!"+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+
+                                }
+                            });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

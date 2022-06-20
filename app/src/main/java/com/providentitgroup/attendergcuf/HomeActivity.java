@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ActionBarContextView;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +14,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.loopj.android.http.TextHttpResponseHandler;
+import com.providentitgroup.attendergcuf.Notifications.MyFirebaseMessaging;
 import com.providentitgroup.attendergcuf.Utility.DataLocal;
 import com.providentitgroup.attendergcuf.Utility.DataRequester;
 import com.providentitgroup.attendergcuf.models.FeeItem;
@@ -54,6 +57,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Toast.makeText(HomeActivity.this,
+                "service "+isMyServiceRunning(MyFirebaseMessaging.class), Toast.LENGTH_SHORT).show();
+        startService(new Intent(HomeActivity.this, MyFirebaseMessaging.class));
 
         context = this;
         timeTableBtn = findViewById(R.id.time_table_activity_btn);
@@ -334,5 +341,14 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
